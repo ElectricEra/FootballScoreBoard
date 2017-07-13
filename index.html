@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FOOTBALL</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="screen-width">
+		<div class="team team-lviv">
+			<img src="FCLviv.gif" alt="">
+			<p class="teamName">Львів</p>
+			<p class="goals">0</p>
+		</div>
+		<div class="team team-guest">
+			<img src="guest.png" alt="">
+			<p class="teamName">Буковина</p>
+			<p class="goals">0</p>
+		</div>
+		<div class="all">
+			<p class="timer">00:00</p>
+		</div>
+	</div>
+	<div class="controls">
+		<div class="teams">
+			<button class="goal-counter lviv">Add goal Lviv</button>
+			<button class="goal-uncounter lviv">Remove goal Lviv</button>
+			<button class="goal-counter guest">Add goal guest</button>
+			<button class="goal-uncounter guest">Remove goal guest</button>
+		</div>
+		<div class="general">
+			<button class="timerButtonStart">Start</button>
+			<button class="timerButtonStop">Stop</button>
+			<button class="timer1stHalf">Set 1st half</button>
+			<button class="timer2ndHalf">Set 2nd half</button>
+			<button class="bgcolor">Set background</button>
+			<input type="color" class="colorPicker">
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

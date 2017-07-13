@@ -1,0 +1,73 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.screen-width {
+	width: 100%;
+	padding-top: 20px;
+}
+
+.screen-width.resizable { 
+	background: grey; 
+	position: relative; 
+}
+
+.screen-width .resizer { 
+	width: 10px; 
+	height: 10px; 
+	background: blue; 
+	position:absolute; 
+	right: 0; 
+	bottom: 0; 
+	cursor: se-resize; 
+}
+
+.team {
+	display: inline-block;
+	width:49%;
+	margin: auto;
+	text-align: center;
+}
+
+.all {
+	display: inline-block;
+	width:98%;
+	margin: auto;
+	text-align: center;
+}
+
+img {
+	width: 200px;
+	height: auto;
+}
+
+p.timer, p.goals {
+	font-size: 80px;
+	padding-top: 20px;
+}
+
+p.teamName {
+	font-size: 60px;
+}
+
+.controls button {
+	width: 140px;
+	height: 50px;
+	margin: 10px;
+	padding: 8px;
+	display: inline-block;
+}
+
+.controls .goal-counter {
+	background: #65bb44;
+}
+
+.controls .goal-uncounter {
+	background: #e46767;
+}
+
+.controls .general button {
+	background: #f9e853;
+}
