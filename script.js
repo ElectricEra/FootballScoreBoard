@@ -17,6 +17,8 @@ var guestButtonUnGoal = document.querySelector(".goal-uncounter.guest");
 
 var lvivScore = document.querySelector(".team-lviv .goals");
 var guestScore = document.querySelector(".team-guest .goals");
+var lvivName = document.querySelector(".team-lviv .teamName");
+var guestName = document.querySelector(".team-guest .teamName")
 
 var timerButtonStart = document.querySelector(".timerButtonStart");
 var timerButtonStop = document.querySelector(".timerButtonStop");
@@ -26,6 +28,11 @@ var timer2ndHalf = document.querySelector(".timer2ndHalf");
 
 var bgcolor = document.querySelector(".bgcolor");
 var colorPicker = document.querySelector(".colorPicker");
+
+var team1name = document.querySelector(".enter-team-1-name");
+var team2name = document.querySelector(".enter-team-2-name");
+
+var saveNames = document.querySelector(".saveNames");
 
 controls.addEventListener("click",function(e){
 	switch (e.target) {
@@ -55,6 +62,9 @@ controls.addEventListener("click",function(e){
 			break;
 		case bgcolor:
 			changeColor();
+			break;
+		case saveNames:
+			saveName();
 			break;
 		default:
 			break;
@@ -138,4 +148,9 @@ function doDrag(e) {
 function stopDrag(e) {
 	document.documentElement.removeEventListener('mousemove', doDrag, false);    
     document.documentElement.removeEventListener('mouseup', stopDrag, false);
+}
+
+function saveName() {
+	lvivName.innerHTML = team1name.value;
+	guestName.innerHTML = team2name.value;
 }
