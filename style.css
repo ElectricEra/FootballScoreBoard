@@ -4,17 +4,17 @@
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.screen-width {
+.panel {
 	width: 100%;
 	padding-top: 20px;
 }
 
-.screen-width.resizable { 
+.panel.resizable { 
 	background: grey; 
 	position: relative; 
 }
 
-.screen-width .resizer { 
+.panel .resizer { 
 	width: 10px; 
 	height: 10px; 
 	background: blue; 

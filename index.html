@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FOOTBALL</title>
+	<title>FOOTBALL TABLE</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="screen-width">
-		<div class="team team-lviv">
+	<div class="panel resizable">
+		<div class="team team-home">
 			<img src="FCLviv.gif" alt="">
-			<p class="teamName">Львів</p>
+			<p class="teamName">Home</p>
 			<p class="goals">0</p>
 		</div>
 		<div class="team team-guest">
 			<img src="guest.png" alt="">
-			<p class="teamName">Буковина</p>
+			<p class="teamName">Guest</p>
 			<p class="goals">0</p>
 		</div>
 		<div class="all">
 			<p class="timer">00:00</p>
 		</div>
+		<div class="resizer"></div>
 	</div>
 	<div class="controls">
 		<div class="teams">
 			<input type="text" class="enter-team-1-name" />
-			<button class="goal-counter lviv">Add goal Lviv</button>
-			<button class="goal-uncounter lviv">Remove goal Lviv</button>
+			<button class="goal-counter home">Add goal Lviv</button>
+			<button class="goal-uncounter home">Remove goal Lviv</button>
 			<input type="text" class="enter-team-2-name" />
 			<button class="goal-counter guest">Add goal guest</button>
 			<button class="goal-uncounter guest">Remove goal guest</button>

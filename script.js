@@ -1,49 +1,50 @@
+// Some default declarations
 var timerLink;
 var timerLength = 0;
 var clockWorks = false;
 var startX, startY, startWidth, startHeight;
 
-var mainBlock = document.querySelector('.screen-width');
-
+// Main elements
+var panel = document.querySelector('.panel');
 var timer = document.querySelector(".timer");
-
 var controls = document.querySelector(".controls");
+var resizer = document.querySelector(".resizer")
 
-var lvivButtonGoal = document.querySelector(".goal-counter.lviv");
+// Teams
+var homeName = document.querySelector(".team-home .teamName");
+var homeScore = document.querySelector(".team-home .goals");
+var guestName = document.querySelector(".team-guest .teamName")
+var guestScore = document.querySelector(".team-guest .goals");
+
+// Buttons
+//  Team based buttons
+var homeButtonGoal = document.querySelector(".goal-counter.home");
+var homeButtonUnGoal = document.querySelector(".goal-uncounter.home");
 var guestButtonGoal = document.querySelector(".goal-counter.guest");
-
-var lvivButtonUnGoal = document.querySelector(".goal-uncounter.lviv");
 var guestButtonUnGoal = document.querySelector(".goal-uncounter.guest");
 
-var lvivScore = document.querySelector(".team-lviv .goals");
-var guestScore = document.querySelector(".team-guest .goals");
-var lvivName = document.querySelector(".team-lviv .teamName");
-var guestName = document.querySelector(".team-guest .teamName")
-
+//  General buttons
 var timerButtonStart = document.querySelector(".timerButtonStart");
 var timerButtonStop = document.querySelector(".timerButtonStop");
-
 var timer1stHalf = document.querySelector(".timer1stHalf");
 var timer2ndHalf = document.querySelector(".timer2ndHalf");
-
 var bgcolor = document.querySelector(".bgcolor");
 var colorPicker = document.querySelector(".colorPicker");
-
 var team1name = document.querySelector(".enter-team-1-name");
 var team2name = document.querySelector(".enter-team-2-name");
-
 var saveNames = document.querySelector(".saveNames");
 
+// "Control center"
 controls.addEventListener("click",function(e){
 	switch (e.target) {
-		case lvivButtonGoal:
-			addGoal(lvivScore);
+		case homeButtonGoal:
+			addGoal(homeScore);
 			break;
 		case guestButtonGoal:
 			addGoal(guestScore);
 			break;
-		case lvivButtonUnGoal:
-			removeGoal(lvivScore);
+		case homeButtonUnGoal:
+			removeGoal(homeScore);
 			break;
 		case guestButtonUnGoal:
 			removeGoal(guestScore);
@@ -71,16 +72,11 @@ controls.addEventListener("click",function(e){
 	}
 })
 
-/*Resizable stuff*/
-
-mainBlock.className = mainBlock.className + ' resizable';
-var resizer = document.createElement('div');
-resizer.className = 'resizer';
-mainBlock.appendChild(resizer);
+// Resizable area listener
 resizer.addEventListener('mousedown', initDrag, false);
 
 
-/*Functions*/
+// Functions
 function timerSetUp() {
 	if (!clockWorks) {
 		clockWorks = true;
@@ -128,21 +124,21 @@ function removeGoal(team) {
 
 function changeColor() {
 	var color = colorPicker.value;
-	console.log(document.querySelector(".screen-width.resizable").style.background = color);
+	console.log(document.querySelector(".panel.resizable").style.background = color);
 }
 
 function initDrag(e) {
     startX = e.clientX;
     startY = e.clientY;
-    startWidth = parseInt(document.defaultView.getComputedStyle(mainBlock).width, 10);
-    startHeight = parseInt(document.defaultView.getComputedStyle(mainBlock).height, 10);
+    startWidth = parseInt(document.defaultView.getComputedStyle(panel).width, 10);
+    startHeight = parseInt(document.defaultView.getComputedStyle(panel).height, 10);
     document.documentElement.addEventListener('mousemove', doDrag, false);
     document.documentElement.addEventListener('mouseup', stopDrag, false);
 }
 
 function doDrag(e) {
-    mainBlock.style.width = (startWidth + e.clientX - startX) + 'px';
-    mainBlock.style.height = (startHeight + e.clientY - startY) + 'px';
+    panel.style.width = (startWidth + e.clientX - startX) + 'px';
+    panel.style.height = (startHeight + e.clientY - startY) + 'px';
 }
 
 function stopDrag(e) {
@@ -151,6 +147,6 @@ function stopDrag(e) {
 }
 
 function saveName() {
-	lvivName.innerHTML = team1name.value;
+	homeName.innerHTML = team1name.value;
 	guestName.innerHTML = team2name.value;
 }
