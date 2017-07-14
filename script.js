@@ -13,8 +13,10 @@ var resizer = document.querySelector(".resizer")
 // Teams
 var homeName = document.querySelector(".team-home .teamName");
 var homeScore = document.querySelector(".team-home .goals");
+var homeImg = document.querySelector(".team-home img");
 var guestName = document.querySelector(".team-guest .teamName")
 var guestScore = document.querySelector(".team-guest .goals");
+var guestImg = document.querySelector(".team-guest img");
 
 // Buttons
 //  Team based buttons
@@ -39,9 +41,11 @@ controls.addEventListener("click",function(e){
 	switch (e.target) {
 		case homeButtonGoal:
 			addGoal(homeScore);
+			animate(homeImg, homeName, homeScore);
 			break;
 		case guestButtonGoal:
 			addGoal(guestScore);
+			animate(guestImg, guestName, guestScore);
 			break;
 		case homeButtonUnGoal:
 			removeGoal(homeScore);
@@ -75,7 +79,6 @@ controls.addEventListener("click",function(e){
 // Resizable area listener
 resizer.addEventListener('mousedown', initDrag, false);
 
-
 // Functions
 function timerSetUp() {
 	if (!clockWorks) {
@@ -100,7 +103,25 @@ function setTime(time) {
 
 function addGoal(team) {
 	var current = +team.innerHTML + 1;
-	team.innerHTML = current; 
+	team.innerHTML = current;
+}
+
+function animate(teamLogo, teamName, teamScore) {
+	teamLogo.classList.add("center-logo-animation");
+	teamName.classList.add("center-name-animation");
+	teamScore === homeScore ? 
+		teamScore.classList.add("add-goal-home-animation")
+		:		
+		teamScore.classList.add("add-goal-guest-animation")
+
+	setTimeout(()=>{
+		teamLogo.classList.remove("center-logo-animation");
+		teamName.classList.remove("center-name-animation");
+		teamScore === homeScore ? 
+			teamScore.classList.remove("add-goal-home-animation")
+			:		
+			teamScore.classList.remove("add-goal-guest-animation")
+	}, 6000);
 }
 
 function doVisualUpdate() {

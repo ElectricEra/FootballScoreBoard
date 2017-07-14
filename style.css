@@ -31,7 +31,7 @@
 	text-align: center;
 }
 
-.all {
+.all, .image-holder {
 	display: inline-block;
 	width:98%;
 	margin: auto;
@@ -52,12 +52,31 @@ p.teamName {
 	font-size: 60px;
 }
 
-.controls button {
-	width: 140px;
+.controls .general, .controls .teams {
+	display: flex;
+  	justify-content: center;
+}
+
+.controls .custom-button {
+	width: 100px;
 	height: 50px;
 	margin: 10px;
-	padding: 8px;
+	padding: 10px;
 	display: inline-block;
+	border: 2px solid black;
+	border-radius: 8px;
+	text-align: center
+}
+
+.controls input {
+	width: 100px;
+	height: 50px;
+	margin: 10px;
+	padding: 10px;
+	display: inline-block;
+	border: 2px solid black;
+	border-radius: 8px;
+	text-align: center
 }
 
 .controls .goal-counter {
@@ -68,6 +87,43 @@ p.teamName {
 	background: #e46767;
 }
 
-.controls .general button {
+.controls .general .custom-button {
 	background: #f9e853;
+}
+
+/*Animation*/
+.center-logo-animation {
+	animation: moveLogo 6s;
+}
+
+@keyframes moveLogo {
+	20% { transform: scale(1.1) translate(0%,22%); }
+	80% { transform: scale(1.1) translate(0%,22%); }
+}
+
+.center-name-animation {
+	animation: moveName 6s;
+}
+
+@keyframes moveName {
+	20% { transform: scale(1.1) translate(0%,80%); }
+	80% { transform: scale(1.1) translate(0%,80%); }
+}
+
+.add-goal-home-animation {
+	animation: grow-home 6s;
+}
+
+@keyframes grow-home {
+	20% { transform: scale(3) translate(17%,-35%); }
+	80% { transform: scale(3) translate(17%,-35%); }
+}
+
+.add-goal-guest-animation {
+	animation: grow-guest 6s;
+}
+
+@keyframes grow-guest {
+	20% { transform: scale(3) translate(-17%,-35%); }
+	80% { transform: scale(3) translate(-17%,-35%); }
 }

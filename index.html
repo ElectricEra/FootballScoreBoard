@@ -7,12 +7,16 @@
 <body>
 	<div class="panel resizable">
 		<div class="team team-home">
-			<img src="FCLviv.gif" alt="">
+			<div class="image-holder">
+				<img src="FCLviv.gif" alt="">
+			</div>	
 			<p class="teamName">Home</p>
 			<p class="goals">0</p>
 		</div>
 		<div class="team team-guest">
-			<img src="guest.png" alt="">
+			<div class="image-holder">
+				<img src="guest.png" alt="">
+			</div>
 			<p class="teamName">Guest</p>
 			<p class="goals">0</p>
 		</div>
@@ -23,21 +27,21 @@
 	</div>
 	<div class="controls">
 		<div class="teams">
-			<input type="text" class="enter-team-1-name" />
-			<button class="goal-counter home">Add goal Lviv</button>
-			<button class="goal-uncounter home">Remove goal Lviv</button>
-			<input type="text" class="enter-team-2-name" />
-			<button class="goal-counter guest">Add goal guest</button>
-			<button class="goal-uncounter guest">Remove goal guest</button>
+			<div class="custom-button goal-uncounter home">Remove goal home</div>
+			<div class="custom-button goal-counter home">Add goal home</div>
+			<input type="text" class="enter-team-1-name" placeholder="Home team"/>
+			<input type="text" class="enter-team-2-name" placeholder="Guest team"/>
+			<div class="custom-button goal-counter guest">Add goal guest</div>
+			<div class="custom-button goal-uncounter guest">Remove goal guest</div>
 		</div>
 		<div class="general">
 			<input type="color" class="colorPicker">
-			<button class="timerButtonStart">Start</button>
-			<button class="timerButtonStop">Stop</button>
-			<button class="timer1stHalf">Set 1st half</button>
-			<button class="timer2ndHalf">Set 2nd half</button>
-			<button class="bgcolor">Set background</button>
-			<button class="saveNames">Save names</button>
+			<div class="custom-button timerButtonStart">Start</div>
+			<div class="custom-button timerButtonStop">Stop</div>
+			<div class="custom-button timer1stHalf">Set 1st half</div>
+			<div class="custom-button timer2ndHalf">Set 2nd half</div>
+			<div class="custom-button bgcolor">Set background</div>
+			<div class="custom-button saveNames">Save names</div>
 		</div>
 	</div>
 	<script src="script.js"></script>
